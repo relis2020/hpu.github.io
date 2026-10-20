@@ -1,0 +1,18 @@
+奇怪，其实不奇怪，可以和transformer的attention机制对比。
+
+FIR和attention的对比是
+
+FIR 滤波器 (hpu_smoother)
+Transformer Attention
+权重性质
+静态 (Static)
+动态 (Dynamic / Data-dependent)
+权重来源
+预先设计好的系数（如 $c_0, c_1 \dots$），对所有输入数据都一样。
+通过 $Q$ 和 $K$ 的内积实时计算出来的 $\text{softmax}(QK^T)$
+
+所以系数就和Q一样的
+
+如果再加入动态系数。
+
+那么就可以区分带中心的子载波和边缘的子载波。
